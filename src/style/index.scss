@@ -20,6 +20,7 @@
 :root {
 	--Black: #000000;
   --Light-Grey: #FAFAFA; 
+  --white: #FFFFFF;
 }
 
 html,
@@ -120,65 +121,112 @@ p{
     border-bottom: 6px solid transparent;
   }
 
+  .line-saperator{
+    width: 100%;
+    height: 1px;
+    background: #f5f5f5;
+    margin: 0 auto 12px auto;
+  }
+
+  .more-container{
+    width: 210px;
+    height: 50vh;
+  }
+
+  .chat-people-object-container{
+    position: fixed;
+    width: 300px;
+    height: 94vh;
+    margin: 2vh 12px 0 0;
+    top:0;
+    right: 0;
+    z-index: 4;
+    animation-duration: 0.4s;
+    animation-iteration-count: 1;
+    animation: right-slider 0.4s;
+  }
+
+  @keyframes right-slider{
+    0%{
+      transform: translate(80px, 0px);
+      opacity: 1;
+    }
+    100%{
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+  }
+
+  .invite-container{
+    width: 210px;
+  }
+
+  .share-container{
+    width: 100px;
+  }
+
   .action-button-container{
     border-radius: 8px;
     background: #FFFFFF;
     padding: 8px 12px;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.02);
     margin-left: -2px;
-    width: 210px;
+  }
 
-    .heading{
-      font-size: 14px;
-      line-height: 16px;
-      font-weight: 600;
+  .heading{
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 600;
+  }
+
+  .close-icon{
+    cursor: pointer;
+  }
+
+  .close-icon:hover svg line{
+    stroke: #000000;
+  }    
+
+  .sub-heading{
+    font-size: 10px;
+    line-height: 12px;
+    color: #606060;
+  }
+
+  .link-container{
+    width: 100%;
+    height: 30px;
+    border: 1px solid #e5e5e5;
+    border-radius: 4px;
+    margin: 4px 0 0 0;
+
+    .link-text{
+      border:0;
+      outline: 0;
+      padding: 6px;
+      width: 72%
     }
 
-    .close-icon:hover svg line{
-      stroke: #000000;
-    }    
+    .link-button{
+      height: 100%;
+      padding: 0 12px;
+      border-radius: 0 4px 4px 0;
 
-    .sub-heading{
-      font-size: 10px;
-      line-height: 12px;
-      color: #606060;
-    }
-
-    .link-container{
-      width: 100%;
-      height: 30px;
-      border: 1px solid #e5e5e5;
-      border-radius: 4px;
-      margin: 4px 0 0 0;
-
-      .link-text{
-        border:0;
-        outline: 0;
-        padding: 6px;
-        width: 72%
-      }
-
-      .link-button{
-        height: 100%;
-        padding: 0 12px;
-        border-radius: 0 4px 4px 0;
-
-        p{
-          color: #FFFFFF;
-          font-weight: bold;
-        }
+      p{
+        color: #FFFFFF;
+        font-weight: bold;
       }
     }
+  }
 
-    .sub-text{
-      font-size: 10px;
-      color: #6d6d6d;
-      line-height: 14px;
-      font-family: Railway-Semibold;
+  .sub-text{
+    font-size: 10px;
+    color: #6d6d6d;
+    line-height: 14px;
+    font-family: Railway-Semibold;
 
-      span{
-        color: #0096FF;
-      }
+    span{
+      color: #0096FF;
     }
   }
 
@@ -202,10 +250,40 @@ p{
         white-space: nowrap;
       }
     }
-
   }
 
-  
+  .action-inner-icon-container{
+    justify-content: center;
+    text-align: center;
+    width: 40px;
+  }
+
+  .inner-icon-spacing{
+    margin: 0 18px 0 0;
+  }
+
+  .action-inner-icon{
+    width: 34px !important;
+    height: 34px !important;
+    margin: 0 auto 8px auto;
+
+    svg path{
+      fill: #838383 !important;
+    }
+  }
+
+  .action-inner-icon:hover svg path{
+    fill: #000000 !important;
+  }
+
+  .inner-icon-text{
+    font-size: 10px;
+    line-height: 14px;
+    color: #0f0f0f;
+    white-space: nowrap;
+  }
+
+
 
   .action-icon{
     width: 42px;
@@ -227,10 +305,38 @@ p{
     transform: scale(1.1); 
   }
 
+  .active-share-icon{
+    background-color: #8400C2 !important;
+
+    svg path{
+      fill: var(--white);
+    }
+  }
+
+  .active-place-icon{
+    background-color: #117B00 !important;
+
+    svg path{
+      fill: var(--white);
+    }
+  }
+
+  .active-react-icon{
+    background-color: #FF8A00 !important;
+
+    svg path{
+      fill: var(--white);
+    }
+  }
+
   .active-default-icon{
     background-color: var(--Light-Grey) !important;
 
     svg path{
+      fill: var(--Black) !important;
+    }
+
+    svg circle{
       fill: var(--Black) !important;
     }
   }
